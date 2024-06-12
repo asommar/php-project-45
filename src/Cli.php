@@ -1,4 +1,5 @@
 <?php
+
 namespace Php\Project\Cli;
 
 use function cli\prompt;
