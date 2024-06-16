@@ -10,6 +10,5 @@ if (file_exists($autoloadPath1)) {
 }
 
 use function Php\Project\Cli\greetUser;
-use function cli\prompt;
 
 greetUser();
