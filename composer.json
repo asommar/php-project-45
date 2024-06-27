@@ -20,6 +20,7 @@
     ],
     "autoload": {
         "files": [
+            "constants.php",
             "src/Cli.php",
             "src/brain-even.php"
         ]
