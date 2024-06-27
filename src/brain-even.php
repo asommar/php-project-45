@@ -19,7 +19,7 @@ function checkAnswer(int $number, string $answer): string
 
 function playBrainEven(): void
 {
-    $countLevels = 3;
+    $countLevels = NUMBER_OF_LEVELS;
     line('Welcome to the Brain Game!');
     $userName = prompt('May I have your name?');
     line("Hello, %s!", $userName);
