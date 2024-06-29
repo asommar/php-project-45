@@ -17,14 +17,15 @@
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-	"bin/brain-calc"
+	    "bin/brain-calc"
     ],
     "autoload": {
         "files": [
             "constants.php",
             "src/Cli.php",
             "src/games/brain-even.php",
-            "src/engine.php"
+            "src/engine.php",
+            "src/games/brain-calc.php"
         ]
     }
 }
