@@ -23,7 +23,8 @@
         "files": [
             "constants.php",
             "src/Cli.php",
-            "src/brain-even.php"
+            "src/games/brain-even.php",
+            "src/engine.php"
         ]
     }
 }
