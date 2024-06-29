@@ -1,11 +1,12 @@
 <?php
+// "исполняемый файл" -> "ИГРА" -> "движок".
 
 namespace Php\Project\Games\Brain\Even;
 
 use function cli\line;
 use function cli\prompt;
 
-function checkAnswer(int $number, string $answer): string
+function getCorrectAnswer(int $number, string $answer): string
 {
     if (
         ($answer === 'yes' && $number % 2 === 0)
@@ -28,7 +29,7 @@ function playBrainEven(): void
         $number = rand();
         line("Question: %d", $number);
         $answer = prompt("Your answer: ");
-        $correctAnswer = checkAnswer($number, $answer);
+        $correctAnswer = getCorrectAnswer($number, $answer);
         if ($answer === $correctAnswer) {
             line("Correct!");
         } else {
