@@ -11,8 +11,8 @@
 namespace Php\Project\Games\Brain\Calc;
 
 use function cli\line;
-use function cli\prompt;
 use function PHP\Project\Engine\greetUser;
+use function PHP\Project\Engine\PlayLevel;
 use function PHP\Project\Engine\sayUserWon;
 
 function getRandomOperator(): string
@@ -37,23 +37,19 @@ function doMath($a, $operation, $b): ?int
 
 function playBrainCalc(): void
 {
-    $countLevels = NUMBER_OF_LEVELS;
     $userName = greetUser();
 
     line('What is the result of the expression?');
-    for ($i = 0; $i < $countLevels; $i++) {
+
+    for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
         $number1 = rand(1, 50);
         $number2 = rand(1, 50);
         $operator = getRandomOperator();
-        line("Question: %d%s%d", $number1, $operator, $number2);
-        $answer = prompt("Your answer");
+        $question = "{$number1} {$operator} {$number2}";
         $correctAnswer = doMath($number1, $operator, $number2);
-        if ($answer != $correctAnswer) {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
-            line("Let's try again, %s!", $userName);
+        if (!playLevel($question, $correctAnswer, $userName)) {
             return;
         }
-        line("Correct!");
     }
     sayUserWon($userName);
 }
