@@ -4,38 +4,23 @@
 namespace Php\Project\Games\Brain\Even;
 
 use function cli\line;
-use function cli\prompt;
+use function PHP\Project\Engine\greetUser;
+use function PHP\Project\Engine\PlayLevel;
 use function PHP\Project\Engine\sayUserWon;
 
-function getCorrectAnswer(int $number, string $answer): string
+function getCorrectAnswer(int $number): string
 {
-    if (
-        ($answer === 'yes' && $number % 2 === 0)
-        || ($answer === 'no' && $number % 2 === 1)
-    ) {
-        return $answer;
-    } else {
-        return $answer === 'no' ? 'yes' : 'no';
-    }
+    return $number % 2 ? 'no' : 'yes';
 }
 
 function playBrainEven(): void
 {
-    $countLevels = NUMBER_OF_LEVELS;
-    line('Welcome to the Brain Game!');
-    $userName = prompt('May I have your name?');
-    line("Hello, %s!", $userName);
+    $userName = greetUser();
     line('Answer "yes" if the number is even, otherwise answer "no".');
-    for ($i = 0; $i < $countLevels; $i++) {
-        $number = rand();
-        line("Question: %d", $number);
-        $answer = prompt("Your answer: ");
-        $correctAnswer = getCorrectAnswer($number, $answer);
-        if ($answer === $correctAnswer) {
-            line("Correct!");
-        } else {
-            line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
-            line("Let's try again, %s!", $userName);
+    for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
+        $question = rand();
+        $correctAnswer = getCorrectAnswer($question);
+        if (!playLevel($question, $correctAnswer, $userName)) {
             return;
         }
     }
