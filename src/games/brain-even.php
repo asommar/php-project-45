@@ -1,5 +1,4 @@
 <?php
-// "исполняемый файл" -> "ИГРА" -> "движок".
 
 namespace Php\Project\Games\Brain\Even;
 

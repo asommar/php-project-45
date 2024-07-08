@@ -10,8 +10,8 @@ use function PHP\Project\Engine\sayUserWon;
 function getQuestionAndAnswer(): array
 {
     $length = rand(5, 10);
-    $step = rand (1, 10);
-    $positionOfHidden = rand (1, $length - 2);
+    $step = rand(1, 10);
+    $positionOfHidden = rand(1, $length - 2);
     $startNumber = rand(0, 50);
     $result = '';
     $hidden = 0;
@@ -34,7 +34,6 @@ function playBrainProgression(): void
     $userName = greetUser();
     line('What number is missing in the progression?');
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
-
         [$question, $correctAnswer] = getQuestionAndAnswer();
         if (!playLevel($question, $correctAnswer, $userName)) {
             return;

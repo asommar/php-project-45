@@ -1,7 +1,7 @@
 <?php
 
-// "исполняемый файл" -> "игра" -> "движок".
 namespace PHP\Project\Engine;
+
 use function cli\line;
 use function cli\prompt;
 
