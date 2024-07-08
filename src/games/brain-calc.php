@@ -13,6 +13,7 @@ namespace Php\Project\Games\Brain\Calc;
 use function cli\line;
 use function cli\prompt;
 use function PHP\Project\Engine\greetUser;
+use function PHP\Project\Engine\sayUserWon;
 
 function getRandomOperator(): string
 {
@@ -54,5 +55,5 @@ function playBrainCalc(): void
         }
         line("Correct!");
     }
-    line("Congratulations, %s", $userName);
+    sayUserWon($userName);
 }

@@ -5,6 +5,7 @@ namespace Php\Project\Games\Brain\Even;
 
 use function cli\line;
 use function cli\prompt;
+use function PHP\Project\Engine\sayUserWon;
 
 function getCorrectAnswer(int $number, string $answer): string
 {
@@ -38,5 +39,5 @@ function playBrainEven(): void
             return;
         }
     }
-    line("Congratulations, %s", $userName);
+    sayUserWon($userName);
 }

@@ -3,11 +3,11 @@
 namespace Php\Project\Games\Brain\Gcd;
 
 use function cli\line;
-use function cli\prompt;
 use function PHP\Project\Engine\greetUser;
 use function PHP\Project\Engine\PlayLevel;
+use function PHP\Project\Engine\sayUserWon;
 
-function playBrainGcd()
+function playBrainGcd(): void
 {
     $userName = greetUser();
     line('Find the greatest common divisor of given numbers.');
@@ -20,5 +20,5 @@ function playBrainGcd()
             return;
         }
     }
-    line("Congratulations, %s", $userName);
+    sayUserWon($userName);
 }
