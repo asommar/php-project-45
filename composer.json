@@ -12,12 +12,14 @@
         }
     ],
     "require": {
-        "wp-cli/php-cli-tools": "^0.11.22"
+        "wp-cli/php-cli-tools": "^0.11.22",
+        "ext-gmp": "*"
     },
     "bin": [
         "bin/brain-games",
         "bin/brain-even",
-	    "bin/brain-calc"
+	    "bin/brain-calc",
+        "bin/brain-gcd"
     ],
     "autoload": {
         "files": [
@@ -25,7 +27,8 @@
             "src/Cli.php",
             "src/games/brain-even.php",
             "src/engine.php",
-            "src/games/brain-calc.php"
+            "src/games/brain-calc.php",
+            "src/games/brain-gcd.php"
         ]
     }
 }
