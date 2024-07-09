@@ -22,7 +22,7 @@ function isPrime(int $num): bool
     return true;
 }
 
-function getCorrectAnswer($data): string
+function getCorrectAnswer(bool $data): string
 {
     return $data ? 'yes' : 'no';
 }
@@ -36,7 +36,7 @@ function playBrainPrime(): void
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
         $question = rand(2, 101);
         $correctAnswer = getCorrectAnswer(isPrime($question));
-        if (!playLevel($question, $correctAnswer, $userName)) {
+        if (!playLevel((string)$question, $correctAnswer, $userName)) {
             return;
         }
     }

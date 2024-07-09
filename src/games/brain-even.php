@@ -9,7 +9,7 @@ use function PHP\Project\Engine\sayUserWon;
 
 function getCorrectAnswer(int $number): string
 {
-    return $number % 2 ? 'no' : 'yes';
+    return ($number % 2) ? 'no' : 'yes';
 }
 
 function playBrainEven(): void
@@ -19,7 +19,7 @@ function playBrainEven(): void
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
         $question = rand();
         $correctAnswer = getCorrectAnswer($question);
-        if (!playLevel($question, $correctAnswer, $userName)) {
+        if (!playLevel((string)$question, $correctAnswer, $userName)) {
             return;
         }
     }

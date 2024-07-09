@@ -13,7 +13,7 @@ function getRandomOperator(): string
     return $operators[rand() & 2];
 }
 
-function doMath($a, $operation, $b): ?int
+function doMath(int $a, string $operation, int $b): ?int
 {
     switch ($operation) {
         case '+':
@@ -38,7 +38,7 @@ function playBrainCalc(): void
         $number2 = rand(1, 50);
         $operator = getRandomOperator();
         $question = "{$number1} {$operator} {$number2}";
-        $correctAnswer = doMath($number1, $operator, $number2);
+        $correctAnswer = (string)doMath($number1, $operator, $number2);
         if (!playLevel($question, $correctAnswer, $userName)) {
             return;
         }

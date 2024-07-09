@@ -27,7 +27,7 @@ function playBrainGcd(): void
         $number2 = rand(1, 50);
         $question = $number1 . ' ' . $number2;
         $correctAnswer = getGCD($number1, $number2);
-        if (!playLevel($question, $correctAnswer, $userName)) {
+        if (!playLevel($question, (string)$correctAnswer, $userName)) {
             return;
         }
     }

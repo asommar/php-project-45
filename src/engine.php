@@ -27,7 +27,7 @@ function PlayLevel(string $question, string $correctAnswer, string $userName): b
     return true;
 }
 
-function sayUserWon($userName): void
+function sayUserWon(string $userName): void
 {
     line("Congratulations, %s!", $userName);
 }
