@@ -3,7 +3,8 @@
     "description": "php-project-45 - first project",
     "type": "project",
     "require-dev": {
-        "squizlabs/php_codesniffer": "^3.10"
+        "squizlabs/php_codesniffer": "^3.10",
+        "phpstan/phpstan": "^1.11"
     },
     "license": "MIT",
     "authors": [

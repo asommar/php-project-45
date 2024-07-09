@@ -9,7 +9,7 @@ use function PHP\Project\Engine\sayUserWon;
 
 function getCorrectAnswer(int $number): string
 {
-    return ($number % 2) ? 'no' : 'yes';
+    return ($number % 2) === 0 ? 'yes' : 'no';
 }
 
 function playBrainEven(): void
