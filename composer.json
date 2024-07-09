@@ -12,8 +12,7 @@
         }
     ],
     "require": {
-        "wp-cli/php-cli-tools": "^0.11.22",
-        "ext-gmp": "*"
+        "wp-cli/php-cli-tools": "^0.11.22"
     },
     "bin": [
         "bin/brain-games",
