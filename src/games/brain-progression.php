@@ -13,17 +13,17 @@ function getQuestionAndAnswer(): array
     $step = rand(1, 10);
     $positionOfHidden = rand(1, $length - 2);
     $startNumber = rand(0, 50);
-    $result = '';
+    $result = $startNumber;
     $hidden = 0;
 
     for ($i = 0, $currentNumber = $startNumber; $i < $length; $i++) {
+        $currentNumber += $step;
         if ($i === $positionOfHidden) {
             $hidden = $currentNumber;
             $result .= ' ..';
         } else {
             $result .= ' ' . $currentNumber;
         }
-        $currentNumber += $step;
     }
 
     return [$result, $hidden];
