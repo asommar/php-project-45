@@ -34,7 +34,7 @@ function playBrainPrime(): void
     line('Answer "yes" if given number is prime. Otherwise answer "no".');
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
-        $question = rand(2, 101);
+        $question = rand(2, MAX_RAND_NUMBER);
         $correctAnswer = getCorrectAnswer(isPrime($question));
         if (!playLevel((string)$question, $correctAnswer, $userName)) {
             return;

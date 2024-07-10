@@ -34,8 +34,8 @@ function playBrainCalc(): void
     line('What is the result of the expression?');
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
-        $number1 = rand(1, 50);
-        $number2 = rand(1, 50);
+        $number1 = rand(1, MAX_RAND_NUMBER);
+        $number2 = rand(1, MAX_RAND_NUMBER);
         $operator = getRandomOperator();
         $question = "{$number1} {$operator} {$number2}";
         $correctAnswer = (string)doMath($number1, $operator, $number2);

@@ -9,10 +9,10 @@ use function PHP\Project\Engine\sayUserWon;
 
 function getQuestionAndAnswer(): array
 {
-    $length = rand(5, 10);
-    $step = rand(1, 10);
+    $length = rand(PROGRESSION_MIN_LENGTH, PROGRESSION_MAX_LENGTH);
+    $step = rand(1, PROGRESSION_MAX_DIFFERENCE);
     $positionOfHidden = rand(1, $length - 2);
-    $startNumber = rand(0, 50);
+    $startNumber = rand(0, PROGRESSION_FIRST_NUMBER);
     $result = $startNumber;
     $hidden = 0;
 
