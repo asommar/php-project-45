@@ -13,19 +13,16 @@ function getQuestionAndAnswer(): array
     $step = rand(1, PROGRESSION_MAX_DIFFERENCE);
     $positionOfHidden = rand(1, $length - 2);
     $startNumber = rand(0, PROGRESSION_FIRST_NUMBER);
-    $result = $startNumber;
-    $hidden = 0;
+    $progression = [];
 
     for ($i = 0, $currentNumber = $startNumber; $i < $length; $i++) {
+        $progression[$i] = $currentNumber;
         $currentNumber += $step;
-        if ($i === $positionOfHidden) {
-            $hidden = $currentNumber;
-            $result .= ' ..';
-        } else {
-            $result .= ' ' . $currentNumber;
-        }
     }
 
+    $hidden = $progression[$positionOfHidden];
+    $progression[$positionOfHidden] = '..';
+    $result = implode(' ', $progression);
     return [$result, $hidden];
 }
 
