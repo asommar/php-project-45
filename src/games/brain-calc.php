@@ -10,6 +10,7 @@ use function PHP\Project\Engine\sayUserWon;
 function getRandomOperator(): string
 {
     $operators = ['+', '-', '*'];
+
     return $operators[rand() & 2];
 }
 
@@ -37,11 +38,14 @@ function playBrainCalc(): void
         $number1 = rand(1, MAX_RAND_NUMBER);
         $number2 = rand(1, MAX_RAND_NUMBER);
         $operator = getRandomOperator();
+
         $question = "{$number1} {$operator} {$number2}";
         $correctAnswer = (string)doMath($number1, $operator, $number2);
+
         if (!playLevel($question, $correctAnswer, $userName)) {
             return;
         }
     }
+
     sayUserWon($userName);
 }

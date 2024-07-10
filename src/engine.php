@@ -18,12 +18,16 @@ function PlayLevel(string $question, string $correctAnswer, string $userName): b
 {
     line("Question: %s", $question);
     $answer = prompt("Your answer");
+
     if ($answer != $correctAnswer) {
         line("'%s' is wrong answer ;(. Correct answer was '%s'.", $answer, $correctAnswer);
         line("Let's try again, %s!", $userName);
+
         return false;
     }
+
     line("Correct!");
+
     return true;
 }
 

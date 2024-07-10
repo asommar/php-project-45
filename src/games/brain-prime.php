@@ -14,11 +14,13 @@ function isPrime(int $num): bool
     } elseif ($num === 2) {
         return true;
     }
+
     for ($i = 2; $i < $num; $i++) {
         if ($num % $i === 0) {
             return false;
         }
     }
+
     return true;
 }
 
@@ -36,9 +38,11 @@ function playBrainPrime(): void
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
         $question = rand(2, MAX_RAND_NUMBER);
         $correctAnswer = getCorrectAnswer(isPrime($question));
+
         if (!playLevel((string)$question, $correctAnswer, $userName)) {
             return;
         }
     }
+
     sayUserWon($userName);
 }
