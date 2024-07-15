@@ -21,23 +21,33 @@ cd php-project-45
 make install
 ```
 ## Run games
-* Brain-even. [Watch gameplay](https://asciinema.org/a/2Rlwm0Af3cnuFy7dwyke6e8uP)
-  ```sh
+* Brain-even.
+  ```shell
   make brain-even
   ```
-* Brain-calc. [Watch gameplay](https://asciinema.org/a/uVIa8vzvxI95fbPTXUG7iKEFN)
-  ```sh
+  
+  [![asciicast](https://asciinema.org/a/2Rlwm0Af3cnuFy7dwyke6e8uP.svg)](https://asciinema.org/a/2Rlwm0Af3cnuFy7dwyke6e8uP)
+* Brain-calc.
+  ```shell
   make brain-calc
   ```
-* Brain-gcd. [Watch gameplay](https://asciinema.org/a/DkcvqzXCJesOCAmBOMFNW6xmq)
-  ```sh
+  
+  [![asciicast](https://asciinema.org/a/uVIa8vzvxI95fbPTXUG7iKEFN.svg)](https://asciinema.org/a/uVIa8vzvxI95fbPTXUG7iKEFN)
+* Brain-gcd.
+  ```shell
   make brain-gcd
   ```
-* Brain-progression. [Watch gameplay](https://asciinema.org/a/3knq0VWi4QQSA7wbbKgFAe0j2)
-  ```sh
+  
+  [![asciicast](https://asciinema.org/a/DkcvqzXCJesOCAmBOMFNW6xmq.svg)](https://asciinema.org/a/DkcvqzXCJesOCAmBOMFNW6xmq)
+* Brain-progression.
+  ```shell
   make brain-progression
   ```
-* Brain-prime. [Watch gameplay](https://asciinema.org/a/RuyyiJ7fZt0UvgFWYz1B05WOj)
-  ```sh
+
+  [![asciicast](https://asciinema.org/a/3knq0VWi4QQSA7wbbKgFAe0j2.svg)](https://asciinema.org/a/3knq0VWi4QQSA7wbbKgFAe0j2)
+* Brain-prime.
+  ```shell
   make brain-prime
   ```
+
+  [![asciicast](https://asciinema.org/a/RuyyiJ7fZt0UvgFWYz1B05WOj.svg)](https://asciinema.org/a/RuyyiJ7fZt0UvgFWYz1B05WOj)
