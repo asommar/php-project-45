@@ -2,10 +2,7 @@
 
 namespace Php\Project\Games\Brain\Even;
 
-use function cli\line;
-use function PHP\Project\Engine\greetUser;
-use function PHP\Project\Engine\playLevel;
-use function PHP\Project\Engine\sayUserWon;
+use function PHP\Project\Engine\playGame;
 
 function getCorrectAnswer(int $number): string
 {
@@ -14,18 +11,13 @@ function getCorrectAnswer(int $number): string
 
 function playBrainEven(): void
 {
-    $userName = greetUser();
-
-    line('Answer "yes" if the number is even, otherwise answer "no".');
+    $questionsAndAnswers = [];
+    $rules = 'Answer "yes" if the number is even, otherwise answer "no".';
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
         $question = rand();
-        $correctAnswer = getCorrectAnswer($question);
-
-        if (!playLevel((string)$question, $correctAnswer, $userName)) {
-            return;
-        }
+        $questionsAndAnswers[] = [$question, getCorrectAnswer($question)];
     }
 
-    sayUserWon($userName);
+    playGame($questionsAndAnswers, $rules);
 }

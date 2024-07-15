@@ -35,3 +35,18 @@ function sayUserWon(string $userName): void
 {
     line("Congratulations, %s!", $userName);
 }
+
+function playGame(array $questionsAndAnswers, string $rules): void
+{
+    $userName = greetUser();
+
+    line($rules);
+
+    foreach ($questionsAndAnswers as [$question, $correctAnswer]) {
+        if (!playLevel((string)$question, (string)$correctAnswer, $userName)) {
+            return;
+        }
+    }
+
+    sayUserWon($userName);
+}

@@ -2,10 +2,7 @@
 
 namespace Php\Project\Games\Brain\Calc;
 
-use function cli\line;
-use function PHP\Project\Engine\greetUser;
-use function PHP\Project\Engine\playLevel;
-use function PHP\Project\Engine\sayUserWon;
+use function PHP\Project\Engine\playGame;
 
 function getRandomOperator(): string
 {
@@ -30,9 +27,8 @@ function calculate(int $a, string $operation, int $b): ?int
 
 function playBrainCalc(): void
 {
-    $userName = greetUser();
-
-    line('What is the result of the expression?');
+    $rules = 'What is the result of the expression?';
+    $questionsAndAnswers = [];
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
         $number1 = rand(1, MAX_RAND_NUMBER);
@@ -42,10 +38,8 @@ function playBrainCalc(): void
         $question = "{$number1} {$operator} {$number2}";
         $correctAnswer = (string)calculate($number1, $operator, $number2);
 
-        if (!playLevel($question, $correctAnswer, $userName)) {
-            return;
-        }
+        $questionsAndAnswers[] = [$question, $correctAnswer];
     }
 
-    sayUserWon($userName);
+    playGame($questionsAndAnswers, $rules);
 }

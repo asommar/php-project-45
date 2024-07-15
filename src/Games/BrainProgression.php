@@ -2,10 +2,7 @@
 
 namespace Php\Project\Games\Brain\Progression;
 
-use function cli\line;
-use function PHP\Project\Engine\greetUser;
-use function PHP\Project\Engine\playLevel;
-use function PHP\Project\Engine\sayUserWon;
+use function PHP\Project\Engine\playGame;
 
 function getQuestionAndAnswer(): array
 {
@@ -30,17 +27,12 @@ function getQuestionAndAnswer(): array
 
 function playBrainProgression(): void
 {
-    $userName = greetUser();
-
-    line('What number is missing in the progression?');
+    $rules = 'What number is missing in the progression?';
+    $questionsAndAnswers = [];
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
-        [$question, $correctAnswer] = getQuestionAndAnswer();
-
-        if (!playLevel($question, $correctAnswer, $userName)) {
-            return;
-        }
+        $questionsAndAnswers[] = getQuestionAndAnswer();
     }
 
-    sayUserWon($userName);
+    playGame($questionsAndAnswers, $rules);
 }

@@ -2,10 +2,7 @@
 
 namespace Php\Project\Games\Brain\Gcd;
 
-use function cli\line;
-use function PHP\Project\Engine\greetUser;
-use function PHP\Project\Engine\playLevel;
-use function PHP\Project\Engine\sayUserWon;
+use function PHP\Project\Engine\playGame;
 
 function getGCD(int $number1, int $number2): int
 {
@@ -22,9 +19,8 @@ function getGCD(int $number1, int $number2): int
 
 function playBrainGcd(): void
 {
-    $userName = greetUser();
-
-    line('Find the greatest common divisor of given numbers.');
+    $rules = 'Find the greatest common divisor of given numbers.';
+    $questionsAndAnswers = [];
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
         $number1 = rand(1, MAX_RAND_NUMBER);
@@ -34,10 +30,8 @@ function playBrainGcd(): void
 
         $correctAnswer = getGCD($number1, $number2);
 
-        if (!playLevel($question, (string)$correctAnswer, $userName)) {
-            return;
-        }
+        $questionsAndAnswers[] = [$question, $correctAnswer];
     }
 
-    sayUserWon($userName);
+    playGame($questionsAndAnswers, $rules);
 }
