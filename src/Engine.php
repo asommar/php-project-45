@@ -5,15 +5,6 @@ namespace PHP\Project\Engine;
 use function cli\line;
 use function cli\prompt;
 
-function greetUser(): string
-{
-    line('Welcome to the Brain Games!');
-    $userName = prompt('May I have your name?');
-    line("Hello, %s!", $userName);
-
-    return $userName;
-}
-
 function playLevel(string $question, string $correctAnswer, string $userName): bool
 {
     line("Question: %s", $question);
@@ -31,16 +22,13 @@ function playLevel(string $question, string $correctAnswer, string $userName): b
     return true;
 }
 
-function sayUserWon(string $userName): void
+function playGame(array $questionsAndAnswers, string $rulesOfGame): void
 {
-    line("Congratulations, %s!", $userName);
-}
+    line('Welcome to the Brain Games!');
+    $userName = prompt('May I have your name?');
+    line("Hello, %s!", $userName);
 
-function playGame(array $questionsAndAnswers, string $rules): void
-{
-    $userName = greetUser();
-
-    line($rules);
+    line($rulesOfGame);
 
     foreach ($questionsAndAnswers as [$question, $correctAnswer]) {
         if (!playLevel((string)$question, (string)$correctAnswer, $userName)) {
@@ -48,5 +36,5 @@ function playGame(array $questionsAndAnswers, string $rules): void
         }
     }
 
-    sayUserWon($userName);
+    line("Congratulations, %s!", $userName);
 }
