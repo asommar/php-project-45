@@ -4,7 +4,7 @@ namespace Php\Project\Games\Brain\Prime;
 
 use function cli\line;
 use function PHP\Project\Engine\greetUser;
-use function PHP\Project\Engine\PlayLevel;
+use function PHP\Project\Engine\playLevel;
 use function PHP\Project\Engine\sayUserWon;
 
 function isPrime(int $num): bool

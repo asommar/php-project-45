@@ -4,7 +4,7 @@ namespace Php\Project\Games\Brain\Gcd;
 
 use function cli\line;
 use function PHP\Project\Engine\greetUser;
-use function PHP\Project\Engine\PlayLevel;
+use function PHP\Project\Engine\playLevel;
 use function PHP\Project\Engine\sayUserWon;
 
 function getGCD(int $number1, int $number2): int

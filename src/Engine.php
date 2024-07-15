@@ -14,7 +14,7 @@ function greetUser(): string
     return $userName;
 }
 
-function PlayLevel(string $question, string $correctAnswer, string $userName): bool
+function playLevel(string $question, string $correctAnswer, string $userName): bool
 {
     line("Question: %s", $question);
     $answer = prompt("Your answer");

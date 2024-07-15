@@ -4,7 +4,7 @@ namespace Php\Project\Games\Brain\Calc;
 
 use function cli\line;
 use function PHP\Project\Engine\greetUser;
-use function PHP\Project\Engine\PlayLevel;
+use function PHP\Project\Engine\playLevel;
 use function PHP\Project\Engine\sayUserWon;
 
 function getRandomOperator(): string
@@ -14,7 +14,7 @@ function getRandomOperator(): string
     return $operators[rand() & 2];
 }
 
-function doMath(int $a, string $operation, int $b): ?int
+function calculate(int $a, string $operation, int $b): ?int
 {
     switch ($operation) {
         case '+':
@@ -40,7 +40,7 @@ function playBrainCalc(): void
         $operator = getRandomOperator();
 
         $question = "{$number1} {$operator} {$number2}";
-        $correctAnswer = (string)doMath($number1, $operator, $number2);
+        $correctAnswer = (string)calculate($number1, $operator, $number2);
 
         if (!playLevel($question, $correctAnswer, $userName)) {
             return;

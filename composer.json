@@ -25,14 +25,14 @@
     ],
     "autoload": {
         "files": [
-            "constants.php",
+            "src/Constants.php",
             "src/Cli.php",
-            "src/games/brain-even.php",
-            "src/engine.php",
-            "src/games/brain-calc.php",
-            "src/games/brain-gcd.php",
-            "src/games/brain-progression.php",
-            "src/games/brain-prime.php"
+            "src/Games/BrainEven.php",
+            "src/Engine.php",
+            "src/Games/BrainCalc.php",
+            "src/Games/BrainGcd.php",
+            "src/Games/BrainProgression.php",
+            "src/Games/BrainPrime.php"
         ]
     }
 }
