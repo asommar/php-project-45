@@ -3,6 +3,7 @@
 namespace Php\Project\Games\Brain\Prime;
 
 use function PHP\Project\Engine\playGame;
+
 use const PHP\Project\Engine\MAX_RAND_NUMBER;
 use const PHP\Project\Engine\NUMBER_OF_LEVELS;
 

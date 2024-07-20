@@ -3,6 +3,7 @@
 namespace Php\Project\Games\Brain\Even;
 
 use function PHP\Project\Engine\playGame;
+
 use const PHP\Project\Engine\NUMBER_OF_LEVELS;
 
 const RULES = 'Answer "yes" if the number is even, otherwise answer "no".';

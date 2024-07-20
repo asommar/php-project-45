@@ -3,6 +3,7 @@
 namespace Php\Project\Games\Brain\Progression;
 
 use function PHP\Project\Engine\playGame;
+
 use const PHP\Project\Engine\NUMBER_OF_LEVELS;
 
 const RULES = 'What number is missing in the progression?';
