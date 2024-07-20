@@ -3,12 +3,16 @@
 namespace Php\Project\Games\Brain\Calc;
 
 use function PHP\Project\Engine\playGame;
+use const PHP\Project\Engine\MAX_RAND_NUMBER;
+use const PHP\Project\Engine\NUMBER_OF_LEVELS;
+
+const RULES = 'What is the result of the expression?';
 
 function getRandomOperator(): string
 {
     $operators = ['+', '-', '*'];
 
-    return $operators[rand() & 2];
+    return $operators[array_rand($operators, 1)];
 }
 
 function calculate(int $a, string $operation, int $b): ?int
@@ -21,13 +25,12 @@ function calculate(int $a, string $operation, int $b): ?int
         case '*':
             return $a * $b;
         default:
-            return null;
+            throw new \Exception("Invalid operator '{$operation}'.");
     }
 }
 
 function playBrainCalc(): void
 {
-    $rules = 'What is the result of the expression?';
     $questionsAndAnswers = [];
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
@@ -41,5 +44,5 @@ function playBrainCalc(): void
         $questionsAndAnswers[] = [$question, $correctAnswer];
     }
 
-    playGame($questionsAndAnswers, $rules);
+    playGame($questionsAndAnswers, RULES);
 }

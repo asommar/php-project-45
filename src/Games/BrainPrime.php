@@ -3,6 +3,10 @@
 namespace Php\Project\Games\Brain\Prime;
 
 use function PHP\Project\Engine\playGame;
+use const PHP\Project\Engine\MAX_RAND_NUMBER;
+use const PHP\Project\Engine\NUMBER_OF_LEVELS;
+
+const RULES = 'Find the greatest common divisor of given numbers.';
 
 function isPrime(int $num): bool
 {
@@ -28,7 +32,6 @@ function getCorrectAnswer(bool $data): string
 
 function playBrainPrime(): void
 {
-    $rules = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $questionsAndAnswers = [];
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
@@ -38,5 +41,5 @@ function playBrainPrime(): void
         $questionsAndAnswers[] = [$question, $correctAnswer];
     }
 
-    playGame($questionsAndAnswers, $rules);
+    playGame($questionsAndAnswers, RULES);
 }

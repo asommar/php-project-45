@@ -3,6 +3,10 @@
 namespace Php\Project\Games\Brain\Gcd;
 
 use function PHP\Project\Engine\playGame;
+use const PHP\Project\Engine\MAX_RAND_NUMBER;
+use const PHP\Project\Engine\NUMBER_OF_LEVELS;
+
+const RULES = 'Find the greatest common divisor of given numbers.';
 
 function getGCD(int $number1, int $number2): int
 {
@@ -19,7 +23,6 @@ function getGCD(int $number1, int $number2): int
 
 function playBrainGcd(): void
 {
-    $rules = 'Find the greatest common divisor of given numbers.';
     $questionsAndAnswers = [];
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
@@ -33,5 +36,5 @@ function playBrainGcd(): void
         $questionsAndAnswers[] = [$question, $correctAnswer];
     }
 
-    playGame($questionsAndAnswers, $rules);
+    playGame($questionsAndAnswers, RULES);
 }

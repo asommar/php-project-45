@@ -5,6 +5,12 @@ namespace PHP\Project\Engine;
 use function cli\line;
 use function cli\prompt;
 
+//Number of levels is the in every game
+const NUMBER_OF_LEVELS = 3;
+
+//Maximum random number in math games
+const MAX_RAND_NUMBER = 50;
+
 function playLevel(string $question, string $correctAnswer, string $userName): bool
 {
     line("Question: %s", $question);

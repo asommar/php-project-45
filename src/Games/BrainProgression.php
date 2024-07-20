@@ -3,6 +3,13 @@
 namespace Php\Project\Games\Brain\Progression;
 
 use function PHP\Project\Engine\playGame;
+use const PHP\Project\Engine\NUMBER_OF_LEVELS;
+
+const RULES = 'What number is missing in the progression?';
+const PROGRESSION_MIN_LENGTH = 5;
+const PROGRESSION_MAX_LENGTH = 10;
+const PROGRESSION_MAX_DIFFERENCE = 10;
+const PROGRESSION_FIRST_NUMBER = 3;
 
 function getQuestionAndAnswer(): array
 {
@@ -27,12 +34,11 @@ function getQuestionAndAnswer(): array
 
 function playBrainProgression(): void
 {
-    $rules = 'What number is missing in the progression?';
     $questionsAndAnswers = [];
 
     for ($i = 0; $i < NUMBER_OF_LEVELS; $i++) {
         $questionsAndAnswers[] = getQuestionAndAnswer();
     }
 
-    playGame($questionsAndAnswers, $rules);
+    playGame($questionsAndAnswers, RULES);
 }
