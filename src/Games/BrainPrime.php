@@ -6,7 +6,7 @@ use function PHP\Project\Engine\playGame;
 use const PHP\Project\Engine\MAX_RAND_NUMBER;
 use const PHP\Project\Engine\NUMBER_OF_LEVELS;
 
-const RULES = 'Find the greatest common divisor of given numbers.';
+const RULES = 'Answer "yes" if given number is prime. Otherwise answer "no".';
 
 function isPrime(int $num): bool
 {
