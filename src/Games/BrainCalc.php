@@ -16,7 +16,7 @@ function getRandomOperator(): string
     return $operators[array_rand($operators, 1)];
 }
 
-function calculate(int $a, string $operation, int $b): ?int
+function calculate(int $a, string $operation, int $b): int
 {
     switch ($operation) {
         case '+':
